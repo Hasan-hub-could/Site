@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benita Roleplay - Whitelist Başvuru</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a0dad, #ff69b4);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 600px;
+            background: rgba(30, 30, 60, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff69b4;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .discord {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .discord a {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .discord a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(50, 50, 80, 0.8);
+            color: white;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border: 2px solid #ff69b4;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background: #ff69b4;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #e55cb1;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benita Roleplay Whitelist V3</h1>
+        <div class="discord">
+            <p>Discord: <a href="https://discord.gg/benitaroleplay" target="_blank">discord.gg/benitaroleplay</a></p>
+        </div>
+        <form id="whitelistForm">
+            <label for="name">Adınız:</label>
+            <input type="text" id="name" name="name" placeholder="Adınızı girin" required>
+
+            <label for="surname">Soyadınız:</label>
+            <input type="text" id="surname" name="surname" placeholder="Soyadınızı girin" required>
+
+            <label for="age">Yaşınız:</label>
+            <select id="age" name="age" required>
+                <option value="" disabled selected>Yaşınızı seçin</option>
+                <script>
+                    for (let i = 0; i <= 99; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+
+            <label for="role">Başvurduğunuz Rol:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Bir rol seçin</option>
+                <option value="LSPD">LSPD</option>
+                <option value="Sheriff">Sheriff</option>
+                <option value="Doj">Doj</option>
+                <option value="EMS">EMS</option>
+                <option value="Taksi">Taksi</option>
+            </select>
+
+            <label for="reason">Neden Bu Sunucuyu Tercih Ettiniz?</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Cevabınızı yazın" required></textarea>
+
+            <button type="button" onclick="submitForm()">Başvuruyu Gönder</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('whitelistForm');
+            const formData = new FormData(form);
+
+            console.log("Form verileri:");
+            formData.forEach((value, key) => {
+                console.log(`${key}: ${value}`);
+            });
+
+            alert("Başvurunuz alındı! Ancak bu sadece bir demo ve gerçek bir sunucuya gönderilmedi.");
+        }
+    </script>
+</body>
+</html>
